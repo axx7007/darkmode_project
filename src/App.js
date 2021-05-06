@@ -1,26 +1,42 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Main from './assets/main.jpg'
 import {Container, SettingIcon, ToggleMode, MediaIcon, MobileWrapper, GroupIcon, ContactIcon, GridIcon, MenuWrapper, ItemWrapper, BackIcon, SwitchIcon, Header, DarkIcon} from './AppStyle'
+import {ThemeContext} from './context'
+
 function App() {
-  const [mode, setMode] = useState(false)
+  const [mode, setMode] = useState(false);
+  const [theme, setTheme] = useContext(ThemeContext);
+  
+  const dark = {
+    icon: 'white',
+    title: 'white',
+    background: 'white'
+  }
+  const light = {
+    icon: 'black',
+    title: 'black',
+    background: 'while'
+  }
+
   const onChange=()=>{
     setMode(!mode)
+    setTheme(mode?dark: light)
   }
   return (
     <Container>
-      <MobileWrapper>
+      <MobileWrapper color={theme.background}>
         <ItemWrapper>
-          <BackIcon />
-          <SwitchIcon />
+          <BackIcon color={theme.icon} />
+          <SwitchIcon color={theme.icon} />
         </ItemWrapper>
         <Header>
           <Header.Img src={Main} />
-          <Header.Title>Abduvaxobov Xojiakbar</Header.Title>
-          <Header.Text>https://github.com/axx7007</Header.Text>
+          <Header.Title color={theme.title}>Abduvaxobov Xojiakbar</Header.Title>
+          <Header.Text color={theme.title}>https://github.com/axx7007</Header.Text>
         </Header>
         <MenuWrapper>
           <DarkIcon />
-          <MenuWrapper.Title>Dark mode</MenuWrapper.Title>
+          <MenuWrapper.Title color={theme.title}>Dark mode</MenuWrapper.Title>
           <ToggleMode
           onChange={onChange}
           checked={mode}
@@ -29,23 +45,23 @@ function App() {
         </MenuWrapper>
         <MenuWrapper>
           <GridIcon />
-          <MenuWrapper.Title>Story</MenuWrapper.Title>
+          <MenuWrapper.Title color={theme.title}>Story</MenuWrapper.Title>
         </MenuWrapper>
         <MenuWrapper>
           <ContactIcon />
-          <MenuWrapper.Title>Chat heads</MenuWrapper.Title>
+          <MenuWrapper.Title color={theme.title}>Chat heads</MenuWrapper.Title>
         </MenuWrapper>
         <MenuWrapper>
           <GroupIcon />
-          <MenuWrapper.Title>Groups</MenuWrapper.Title>
+          <MenuWrapper.Title color={theme.title}>Groups</MenuWrapper.Title>
         </MenuWrapper>
         <MenuWrapper>
           <MediaIcon />
-          <MenuWrapper.Title>Media</MenuWrapper.Title>
+          <MenuWrapper.Title color={theme.title}>Media</MenuWrapper.Title>
         </MenuWrapper>
         <MenuWrapper>
           <SettingIcon />
-          <MenuWrapper.Title>Settings and Privacy</MenuWrapper.Title>
+          <MenuWrapper.Title color={theme.title}>Settings and Privacy</MenuWrapper.Title>
         </MenuWrapper>
       </MobileWrapper>
     </Container>

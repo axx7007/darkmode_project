@@ -1,14 +1,19 @@
-import React, {createContext} from 'react'
+import React, {createContext, useState} from 'react'
 
 
-export const Theme = createContext();
+export const ThemeContext = createContext();
 
 
 const Mode=({children})=>{
+    const [theme, setTheme] = useState({
+        icon: 'black',
+        title: 'black',
+        backgraound: 'white'
+    })
     return(
-        <Theme.Provider>
+        <ThemeContext.Provider>
             {children}
-        </Theme.Provider>
+        </ThemeContext.Provider>
     )
 }
-export const Mode
+export default Mode
