@@ -2,6 +2,18 @@ import styled from 'styled-components'
 import {ArrowIosBack} from '@styled-icons/evaicons-solid/ArrowIosBack'
 import {Switch} from "@styled-icons/icomoon/Switch"
 import {DarkMode} from "@styled-icons/material/DarkMode"
+import {Grid} from '@styled-icons/bootstrap/Grid'
+import {Contacts} from '@styled-icons/remix-line/Contacts'
+import {Group} from '@styled-icons/boxicons-regular/Group'
+import {PermMedia} from '@styled-icons/material-outlined/PermMedia'
+import {SettingsOutline} from "@styled-icons/evaicons-outline/SettingsOutline"
+
+import Toggle from 'react-dark-mode-toggle'
+
+export const ToggleMode = styled(Toggle)`
+margin-left: auto;
+outline: none;
+`
 export const Container = styled.div`
 width: 100vh;
 height: 100vh;
@@ -35,7 +47,6 @@ color: black;
 `
 export const Header = styled.div`
 display: flex; 
-border: 1px solid black;
 flex-direction: column;
 justify-content: center;
 align-items: center;
@@ -60,4 +71,52 @@ padding: 0;
 font-size: 14px;
 margin-top: 3px;
 `
- 
+export const MenuWrapper = styled.div`
+display: flex;
+margin-top: 12px;
+margin-left: 15px;
+align-items: center;
+`
+MenuWrapper.Title = styled.h4`
+font-size: 16px;
+color: black;
+margin: 0;
+padding: 0;
+margin-left: 15px;
+`
+export const DarkIcon = styled(DarkMode)`
+width: 20px; 
+height: 20px;
+color: black;
+`
+export const GridIcon = styled(Grid)`
+width: 20px;
+height: 20px;
+color: orange;
+`
+export const ContactIcon = styled(Contacts)`
+width: 20px;
+height: 20px;
+color: blue;
+`
+ export const GroupIcon = styled(Group)`
+ width: 25px;
+ height: 25px;
+ color: purple;
+ `
+ export const Menu = styled.div`
+display: flex;
+flex-direction: column-reverse;
+`
+
+export const MediaIcon = styled(PermMedia)`
+width: 20px;
+height: 20px;
+color: blue;
+`
+
+export const SettingIcon = styled(SettingsOutline)`
+width: 20px;
+height: 20px;
+color:blue;
+`
