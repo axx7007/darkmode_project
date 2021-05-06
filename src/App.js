@@ -1,10 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import Main from './assets/main.jpg'
+import {Container, MobileWrapper, ItemWrapper, BackIcon, SwitchIcon, Header} from './AppStyle'
 function App() {
   return (
-    <div className="App">
-          </div>
+    <Container>
+      <MobileWrapper>
+        <ItemWrapper>
+          <BackIcon />
+          <SwitchIcon />
+        </ItemWrapper>
+        <Header>
+          <Header.Img src={Main} />
+          <Header.Title>Abduvaxobov Xojiakbar</Header.Title>
+          <Header.Text>https://github.com/axx7007</Header.Text>
+        </Header>
+      </MobileWrapper>
+    </Container>
   );
 }
 
