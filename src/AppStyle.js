@@ -8,12 +8,14 @@ import {Group} from '@styled-icons/boxicons-regular/Group'
 import {PermMedia} from '@styled-icons/material-outlined/PermMedia'
 import {SettingsOutline} from "@styled-icons/evaicons-outline/SettingsOutline"
 
+
 import Toggle from 'react-dark-mode-toggle'
 
 export const ToggleMode = styled(Toggle)`
 margin-left: auto;
-outline: none;
 `
+
+
 export const Container = styled.div`
 width: 100vh;
 height: 100vh;

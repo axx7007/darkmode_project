@@ -8,10 +8,10 @@ const Mode=({children})=>{
     const [theme, setTheme] = useState({
         icon: 'black',
         title: 'black',
-        backgraound: 'white'
+        background: 'white'
     })
     return(
-        <ThemeContext.Provider>
+        <ThemeContext.Provider value={[theme, setTheme]}>
             {children}
         </ThemeContext.Provider>
     )
