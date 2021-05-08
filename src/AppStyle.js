@@ -25,12 +25,12 @@ flex-direction: column;
 `
 
 export const MobileWrapper = styled.div`
-width: 400px;
-height: 650px;
+width: 300px;
+height: fit-content;
 border-radius: 25px;
-/* background-color: whitesmoke; */
 border: 1px solid black;
 padding: 30px;
+background-color: ${({color})=>color};
 `
 export const ItemWrapper = styled.div`
 display: flex;
@@ -40,12 +40,12 @@ justify-content: space-between;
 export const BackIcon = styled(ArrowIosBack)`
 width:20px;
 height: 20px;
-color: black;
+color: ${({color})=>color};;
 `
 export const SwitchIcon = styled(Switch)`
 width:20px;
 height: 20px;
-color: black;
+color: ${({color})=>color};;
 `
 export const Header = styled.div`
 display: flex; 
@@ -60,14 +60,14 @@ border-radius: 50%;
 margin-top: 30px;
 `
 Header.Title = styled.h1`
-color: black;
+color: ${({color})=>color};;
 font-size: 20px;
 margin: 0;
 padding:0;
 margin-top: 15px;
 `
 Header.Text = styled.p`
-color: grey;
+color: ${({color})=>color};;
 margin:0;
 padding: 0;
 font-size: 14px;
@@ -84,6 +84,7 @@ font-size: 16px;
 color: black;
 margin: 0;
 padding: 0;
+color: ${({color})=>color};;
 margin-left: 15px;
 `
 export const DarkIcon = styled(DarkMode)`
